@@ -1,0 +1,50 @@
+// ============================================================================
+// Source: STEAM Clown - www.steamclown.org 
+// GitHub: https://github.com/jimTheSTEAMClown/arduinoCode
+// Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
+// This example code is licensed under the CC BY-NC-SA 3.0.
+// https://creativecommons.org/licenses/by-nc-sa/3.0/
+// Create Date:			09/03/2017 
+// Design Name:			steamClass_Debug
+// Description:     use serial Monitor as a debug tool
+// Dependencies: 
+// Revision: 
+// Revision 0.02 - Updated for SVCTE Mechatronics Class
+// Revision 0.01 - Created 09/03/2017
+// Additional Comments: 
+//
+// ============================================================================
+// define variables that will be used in the sketch
+const int arduinoBoardLED = 13;		// LED on pin 13 
+
+// ============================================================================
+// The setup routine runs once when you load the sketch or press reset:
+// This is where you define pin directions
+void setup()
+{
+
+	Serial.begin(9600);           // Use Serial Monitor to debug
+	Serial.println("Beginning of Setup");
+	// initialize the digital pin as an output.
+	Serial.println("Setting I/O pin Status and Direction");
+	pinMode(arduinoBoardLED, OUTPUT);
+
+	// This only runs one time
+	Serial.println("Printing something in the Setup Function");
+	Serial.print("The pin the LED is connected to: ");  // this prints text, but no line feed or return
+	Serial.println(arduinoBoardLED); // this prints a Var and a line feed and return
+	Serial.println("Setup Complete");
+}
+
+// ============================================================================
+// the "main" loop routine runs over and over again forever:
+void loop()
+{
+  //Set the LED pin to HIGH. This provides 5 volts to the LED and turns it on
+	digitalWrite(arduinoBoardLED, HIGH);
+	delay(250);	//Wait for a second
+	//Set the LED pin to LOW. This turns it off
+	digitalWrite(arduinoBoardLED, LOW);
+	delay(250);	//Wait for a second
+	Serial.print(".");
+}
