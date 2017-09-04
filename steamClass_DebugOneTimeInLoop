@@ -1,10 +1,24 @@
-// ----------------------------------------------------------------------------
+// ============================================================================
+// Source: STEAM Clown - www.steamclown.org 
+// GitHub: https://github.com/jimTheSTEAMClown/arduinoCode
+// Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
+// This example code is licensed under the CC BY-NC-SA 3.0.
+// https://creativecommons.org/licenses/by-nc-sa/3.0/
+// Create Date:			09/03/2017 
+// Design Name:			steamClass_Debug
+// Description:     use serial Monitor as a debug tool
+// Dependencies: 
+// Revision: 
+// Revision 0.02 - Updated for SVCTE Mechatronics Class
+// Revision 0.01 - Created 09/03/2017
+// Additional Comments: 
+//
+// ============================================================================
 // define variables that will be used in the sketch
-// ----------------------------------------------------------------------------
 const int arduinoBoardLED = 13;		// LED on pin 13 
 
 int firstTimeThroughLoopVar = 0;	// Use to control code that i want 
-									// to run just once in the mail loop 
+					// to run just once in the mail loop 
 	
 // ============================================================================
 // The setup routine runs once when you load the sketch or press reset:
