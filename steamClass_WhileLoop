@@ -1,10 +1,22 @@
 // ============================================================================
-
-// ----------------------------------------------------------------------------
+// Source: STEAM Clown - www.steamclown.org 
+// GitHub: https://github.com/jimTheSTEAMClown/arduinoCode
+// Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
+// This example code is licensed under the CC BY-NC-SA 3.0.
+// https://creativecommons.org/licenses/by-nc-sa/3.0/
+// Create Date:			09/10/2017 
+// Design Name:			steamClass_whileLoop
+// Description:     adaptation of code on http://arduino.cc/
+// Dependencies: 
+// Revision: 
+// Revision 0.02 - Updated for SVCTE Mechatronics Class
+// Revision 0.01 - Created 09/10/2017
+// Additional Comments: 
+//
+// ============================================================================
 // define variables that will be used in the sketch
 // ----------------------------------------------------------------------------
 const int arduinoBoardLED = 13;		// LED on pin 13 
-
 int delayTime = 200;		// Set a delay time constant 
 int loopCounter;
 
