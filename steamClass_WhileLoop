@@ -1,0 +1,70 @@
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// define variables that will be used in the sketch
+// ----------------------------------------------------------------------------
+const int arduinoBoardLED = 13;		// LED on pin 13 
+
+int delayTime = 200;		// Set a delay time constant 
+int loopCounter;
+
+// ============================================================================
+// The setup routine runs once when you load the sketch or press reset:
+// This is where you define pin directions
+void setup()
+{
+
+	Serial.begin(9600);           // Use Serial Monitor to debug
+	Serial.println("Beginning of Setup");
+
+	// initialize the digital pin as an output.
+	pinMode(arduinoBoardLED, OUTPUT);
+
+	Serial.println("Setup Complete");
+	Serial.println("Beginning of Main Loop");	
+}
+
+// the loop routine runs over and over again forever:
+void loop()
+{
+	loopCounter = 1;
+	Serial.println(loopCounter);
+  	Serial.println("starting While");
+	//  while(loopCounter != 10)
+  	while(loopCounter < 10)
+  	{
+		delayTime = 200;
+   		Serial.print("while = ");
+   		Serial.println(loopCounter);
+   		digitalWrite(arduinoBoardLED, HIGH);
+   		delay(delayTime);
+   		digitalWrite(arduinoBoardLED, LOW);
+   		delay(delayTime);
+ 		loopCounter++;
+    }
+  	Serial.print("dropped out of While loop: loopCounter = ");
+  	Serial.println(loopCounter); 
+//  
+  	delay(2000);
+
+	
+  	loopCounter = 1;
+  	Serial.println(loopCounter);
+  	Serial.println("starting DoWhile");
+  	do
+  	{
+		delayTime = 500;
+		Serial.print("do = ");
+   		Serial.println(loopCounter);
+   		digitalWrite(arduinoBoardLED, HIGH);
+   		delay(delayTime);
+   		digitalWrite(arduinoBoardLED, LOW);
+   		delay(delayTime);
+   		loopCounter++;
+		//  }while(loopCounter != 10);
+  	}while(loopCounter < 10);
+  	Serial.print("dropped out of Do loop: loopCounter = ");
+  	Serial.println(loopCounter); 
+//  
+  	delay(2000);
+}
