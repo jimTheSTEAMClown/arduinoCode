@@ -1,0 +1,40 @@
+// ============================================================================
+// Source: STEAM Clown - www.steamclown.org 
+// GitHub: https://github.com/jimTheSTEAMClown/arduinoCode
+// Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
+// This example code is licensed under the CC BY-NC-SA 3.0.
+// https://creativecommons.org/licenses/by-nc-sa/3.0/
+// Create Date:      09/13/2017 
+// Design Name:     steamClass_IntRollover_1
+// Description:     adaptation of code on http://arduino.cc/
+// Dependencies: 
+// Revision: 
+// Revision 0.02 - Updated for SVCTE Mechatronics Class
+// Revision 0.01 - Created 09/13/2017
+// Additional Comments: 
+//
+// ============================================================================
+
+int intRollOver = 0;
+
+
+const int arduinoBoardLED = 13;   // define as constant integer on pin 13 
+
+// ============================================================================
+// The setup routine runs once when you load the sketch or press reset:
+// This is where you define pin directions
+void setup()
+{
+  Serial.begin(9600);           // Use Serial Monitor to debug
+  // initialize the pins used in this sketch
+  pinMode(arduinoBoardLED, OUTPUT);
+}
+
+// this "main" loop routine runs over and over again forever:
+void loop()
+{
+  Serial.print("Intiger =  ");  // this prints text, but no line feed or return
+  Serial.println(intRollOver); // this prints a signed integer
+  intRollOver++;
+
+}
