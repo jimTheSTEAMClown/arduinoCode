@@ -17,21 +17,24 @@
 
 int a = 1;
 int b = 2;
+int x = 0;
 
 // ============================================================================
 // The setup routine runs once when you load the sketch or press reset:
 // This is where you define pin directions
 void setup()
 {
-	Serial.begin(9600);           // Use Serial Monitor to debug
-	int c = a + b;
-	// This print and println is just to print text to the console
-	Serial.print("a = ");  
-	Serial.println(a); 
-	Serial.print("b = ");  
-	Serial.println(b); 	
-	Serial.print("a + b = ");  // this prints text, but no line feed or return
-	Serial.println(c); // this prints and line feed and return
+  Serial.begin(9600);           // Use Serial Monitor to debug
+  int c = a + b;
+  // This print and println is just to print text to the console
+  Serial.print("a = ");  
+  Serial.println(a); 
+  Serial.print("b = ");  
+  Serial.println(b);  
+  Serial.print("a + b = ");  // this prints text, but no line feed or return
+  Serial.println(c); // this prints and line feed and return
+  // Add some more math functions and print them
+  // x = a * b;
 }
 
 // ============================================================================
