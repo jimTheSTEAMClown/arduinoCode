@@ -1,0 +1,147 @@
+// ============================================================================
+// Source: STEAM Clown - www.steamclown.org 
+// GitHub: https://github.com/jimTheSTEAMClown/arduinoCode
+// Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
+// This example code is licensed under the CC BY-NC-SA 3.0.
+// https://creativecommons.org/licenses/by-nc-sa/3.0/
+// Create Date:			09/12/2017 
+// Design Name:			steamClass_LAB_001
+// Description:     adaptation of code on http://arduino.cc/
+// Dependencies: 
+// Revision: 
+// Revision 0.02 - Updated for SVCTE Mechatronics Class
+// Revision 0.01 - Created 09/10/2017
+// Additional Comments: This is a Lab to use If, If Else, For and While loops.
+// Create a program that will
+// 1) Print each year starting from 1970 to the year 2063
+    // 1970
+    // 1971
+    // 1972
+    // .
+    // .
+    // .
+    // 2061
+    // 2062
+    // 2063
+// 2) Add printing after the year 1970 " is the year time started", and after 2063 " is the year of warp flight"
+//
+    // 1970 is the year time started
+    // 1971
+    // 1972
+    // .
+    // .
+    // .
+    // 2061
+    // 2062
+    // 2063 is the year of warp flight
+//
+// 3) Add printing " is a decade year" after any year that is the decade year like 1970, 1980, 1990, 2000, 2010... 2060
+//
+    // 1970 is a decade year
+    // 1971
+    // 1972
+    // .
+    // .
+    // .
+    // 2060 is a decade year
+    // 2061
+    // 2062
+    // 2063
+//
+// 3) Add printing " is a year we vote for president" after any year that is the a year we vote... starting with 1972
+//
+    // 1970 is a decade year
+    // 1971
+    // 1972
+    // .
+    // .
+    // .
+    // 2060 is a decade year
+    // 2061
+    // 2062
+    // 2063
+// 4) Add printing " is a leap year" after each year that is a leap year.  
+// How do we calculate a leap year? In the Gregorian calendar three criteria 
+// must be taken into account to identify leap years:
+//  - The year can be evenly divided by 4;
+//  - If the year can be evenly divided by 100, it is NOT a leap year, unless;
+//  - The year is also evenly divisible by 400. Then it is a leap year.
+//  This means that in the Gregorian calendar, the years 2000 and 2400 are leap years, 
+//  while 1800, 1900, 2100, 2200, 2300 and 2500 are NOT leap years.
+    // 1970
+    // 1971
+    // 1972
+    // .
+    // .
+    // .
+    // 2061
+    // 2062
+    // 2063
+// new line, but print 
+//
+// ============================================================================
+// define variables that will be used in the sketch
+// ----------------------------------------------------------------------------
+const int arduinoBoardLED = 13;		// LED on pin 13 
+int delayTime = 200;		// Set a delay time constant 
+int loopCounter;
+
+// ============================================================================
+// The setup routine runs once when you load the sketch or press reset:
+// This is where you define pin directions
+void setup()
+{
+
+	Serial.begin(9600);           // Use Serial Monitor to debug
+	Serial.println("Beginning of Setup");
+
+	// initialize the digital pin as an output.
+	pinMode(arduinoBoardLED, OUTPUT);
+
+	Serial.println("Setup Complete");
+	Serial.println("Beginning of Main Loop");	
+}
+
+// the loop routine runs over and over again forever:
+void loop()
+{
+	loopCounter = 1;
+	Serial.println(loopCounter);
+  	Serial.println("starting While");
+	//  while(loopCounter != 10)
+  	while(loopCounter < 10)
+  	{
+		delayTime = 200;
+   		Serial.print("while = ");
+   		Serial.println(loopCounter);
+   		digitalWrite(arduinoBoardLED, HIGH);
+   		delay(delayTime);
+   		digitalWrite(arduinoBoardLED, LOW);
+   		delay(delayTime);
+ 		loopCounter++;
+    }
+  	Serial.print("dropped out of While loop: loopCounter = ");
+  	Serial.println(loopCounter); 
+//  
+  	delay(2000);
+
+  	loopCounter = 1;
+  	Serial.println(loopCounter);
+  	Serial.println("starting DoWhile");
+  	do
+  	{
+		delayTime = 500;
+		Serial.print("do = ");
+   		Serial.println(loopCounter);
+   		digitalWrite(arduinoBoardLED, HIGH);
+   		delay(delayTime);
+   		digitalWrite(arduinoBoardLED, LOW);
+   		delay(delayTime);
+   		loopCounter++;
+		//  }while(loopCounter != 10);
+  	}while(loopCounter < 10);
+  	Serial.print("dropped out of Do loop: loopCounter = ");
+  	Serial.println(loopCounter); 
+//  
+  	delay(2000);
+}
