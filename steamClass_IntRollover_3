@@ -4,8 +4,8 @@
 // Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
 // This example code is licensed under the CC BY-NC-SA 3.0.
 // https://creativecommons.org/licenses/by-nc-sa/3.0/
-// Create Date:			09/13/2017 
-// Design Name:			steamClass_IntRollover_3
+// Create Date:      09/13/2017 
+// Design Name:     steamClass_IntRollover_3
 // Description:     adaptation of code on http://arduino.cc/
 // Dependencies: 
 // Revision: 
@@ -16,7 +16,7 @@
 // ============================================================================
 
 int intRollOver = 32764;  // <-- comment out this line and un-comment the next
-// int intRollOver = 65,525;
+// unsigned int intRollOver = 65525;
 
 const int arduinoBoardLED = 13;   // define as constant integer on pin 13 
 
