@@ -15,7 +15,7 @@
 //
 // ============================================================================
 
-int intRollOver = 32764;
+int intRollOver = 32764;  // <-- comment out this line and un-comment the next
 // int intRollOver = 65,525;
 
 const int arduinoBoardLED = 13;   // define as constant integer on pin 13 
