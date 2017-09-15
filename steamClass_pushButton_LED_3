@@ -1,0 +1,55 @@
+// ============================================================================
+// Source: STEAM Clown - www.steamclown.org 
+// GitHub: https://github.com/jimTheSTEAMClown/arduinoCode
+// https://www.tinkercad.com/things/lODZikfSpi5-incredible-robo/editel?tenant=circuits
+// Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
+// This example code is licensed under the CC BY-NC-SA 3.0.
+// https://creativecommons.org/licenses/by-nc-sa/3.0/
+// Create Date:			09/14/2017 
+// Design Name:			steamClass_pushButton_LED_3
+// Description:     adaptation of blink on http://arduino.cc/
+// Dependencies: 
+// Revision: 
+// Revision 0.02 - Updated for SVCTE Mechatronics Class
+// Revision 0.01 - Created 09/14/2017
+// Additional Comments: 
+//
+// ============================================================================
+const int LED = 10;		// LED on some pin  
+const int buttonPin = A0;	// Input on pin Analog Pin 0 
+int buttonStatus = LOW;		// variable for reading the status buttonPin on Pin
+
+// ============================================================================
+// The setup routine runs once when you load the sketch or press reset:
+// This is where you define pin directions
+void setup()
+{
+	Serial.begin(9600);           // Use Serial Monitor to debug
+	// initialize the digital pin as an output.
+	pinMode(LED, OUTPUT);
+	pinMode(buttonPin, INPUT);	
+	digitalWrite(buttonPin, HIGH);  // set pullup on analog pin 0
+}
+
+// ============================================================================
+// the loop routine runs over and over again forever:
+void loop()
+{
+	buttonStatus = digitalRead(buttonPin);
+	if (buttonStatus == HIGH)
+	{
+		digitalWrite(LED, HIGH);
+    	Serial.println ("Detected PushButton signal");
+		// This is where you would put code that you wanted to happen when 
+		// buttonStatus is HIGH
+		delay(100);
+	}
+    else // buttonStatus == LOW
+    {	
+    	digitalWrite(LED, LOW);
+    	Serial.println ("Waiting to Detect pushButton signal");
+    	// This is where you would put code that you wanted to happen when 
+		// buttonStatus is lOW
+	   	delay(100);
+	}
+}
