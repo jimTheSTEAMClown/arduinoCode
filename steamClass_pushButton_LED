@@ -22,7 +22,7 @@ int buttonState = 0;     // variable to store the read value
 void setup() 
   {  
 	pinMode(LED, OUTPUT);  // set pin 13 as output  
-	pinMode(pushButton, INPUT);      // set pin 6 as input
+	pinMode(pushButton, INPUT);      // set pin "pushButton" as input
   }
 
 void loop()
