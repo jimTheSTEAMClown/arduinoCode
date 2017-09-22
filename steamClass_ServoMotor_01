@@ -1,0 +1,21 @@
+#include <Servo.h> 
+Servo fingerServo;  // create servo object to control a servo  
+                    // twelve servo objects can be created on most boards
+
+// ------------------------------------------------------------------------------------
+// the setup function runs once when you press reset or power the board
+void setup() {
+  fingerServo.attach(9);  // attaches the servo on pin 8 to the servo object
+  //Setting Servos to center default position
+  fingerServo.write(20);
+}
+
+// ------------------------------------------------------------------------------------
+// the loop function runs over and over again forever
+void loop() 
+{
+  fingerServo.write(20);
+  delay(2000);
+  fingerServo.write(80);
+  delay(3000) ;
+}
