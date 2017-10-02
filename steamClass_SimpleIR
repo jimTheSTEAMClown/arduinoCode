@@ -1,0 +1,38 @@
+// Simple IR sensor code
+const int arduinoBoardLED = 13;		// LED on pin 13
+const int sensorIR = 6;		// input pin for Push Button sensor
+
+int sensorIR_Value = LOW;          // variable for reading the status of the IR sensor sensor
+
+// the setup routine runs once when you press reset:
+void setup()
+{
+	pinMode(arduinoBoardLED, OUTPUT);
+	pinMode(sensorIR, INPUT);
+	
+//let IR warm up for 10 seconds
+	for (int i=0; i <= 20; i++){
+		digitalWrite(arduinoBoardLED, HIGH);
+		delay(100);
+		digitalWrite(arduinoBoardLED, LOW);
+		delay(100);
+	} 
+}
+
+// the loop routine runs over and over again forever:
+void loop()
+{
+    sensorIR_Value = digitalRead(sensorIR);
+	if (sensorIR_Value == HIGH)
+	{
+			digitalWrite(arduinoBoardLED, LOW);
+			// waiting to Detect IR signal
+    }
+    else if (sensorIR_Value == LOW)
+    {
+    	// Detected IR signal
+    	digitalWrite(arduinoBoardLED, HIGH);
+    	delay(500);
+	}
+
+}
