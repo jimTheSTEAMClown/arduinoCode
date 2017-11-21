@@ -1,0 +1,118 @@
+//
+//   http://www.bajdi.com
+//   L9110 motor driver controlling 2 small DC motors
+//   
+  // Motor 1
+const int dir1PinA = 2;
+const int dir2PinA = 3;
+const int speedPinA = 9; // Needs to be a PWM pin to be able to control motor speed
+
+// Motor 2
+const int dir1PinB = 4;
+const int dir2PinB = 5;
+const int speedPinB = 10; // Needs to be a PWM pin to be able to control motor speed
+
+byte speed = 0;  // change this (0-255) to control the speed of the motors
+  
+void setup() {
+    // initialize serial communication @ 9600 baud:
+    Serial.begin(9600);
+
+    //Define L298N Dual H-Bridge Motor Controller Pins
+    pinMode(dir1PinA,OUTPUT);
+    pinMode(dir2PinA,OUTPUT);
+    pinMode(speedPinA,OUTPUT);
+    pinMode(dir1PinB,OUTPUT);
+    pinMode(dir2PinB,OUTPUT);
+    pinMode(speedPinB,OUTPUT);
+  }
+   
+  void loop() {
+    driveMotorStop();
+    delay(5000);
+    driveMotorForward(180);
+    delay(500);
+    stearMotorLeft(100);
+    delay(500);
+    stearMotorRight(100);
+    delay(500);
+    stearMotorLeft(100);
+    delay(1000);
+    driveMotorStop();
+    delay(1000);
+    driveMotorReverse(180);
+    delay(1000);
+    driveMotorStop();
+    delay(1000);
+  }
+
+int driveMotorForward(int driveSpeed)
+  {
+    analogWrite(speedPinA, driveSpeed);//Sets speed variable via PWM 
+    digitalWrite(dir1PinA, LOW);
+    digitalWrite(dir2PinA, HIGH);
+    Serial.println("Motor 1 Forward"); // Prints out “Motor 1 Forward” on the serial monitor
+    Serial.println("   "); // Creates a blank line printed on the serial monitor
+  }
+
+void driveMotorFreeSpin()
+  {
+    analogWrite(speedPinA, 0);//Sets speed variable via PWM 
+    digitalWrite(dir1PinA, LOW);
+    digitalWrite(dir2PinA, HIGH);
+    Serial.println("Motor 1 Stop");
+    Serial.println("   ");
+  }
+
+int driveMotorReverse(int driveSpeed)
+  {
+    analogWrite(speedPinA, driveSpeed);//Sets speed variable via PWM 
+    digitalWrite(dir1PinA, HIGH);
+    digitalWrite(dir2PinA, LOW);
+    Serial.println("Motor 1 Reverse");
+    Serial.println("   ");
+  }
+
+void driveMotorStop()
+  {
+    analogWrite(speedPinA, 0);//Sets speed variable via PWM 
+    digitalWrite(dir1PinA, LOW);
+    digitalWrite(dir2PinA, LOW);
+    Serial.println("Motor 1 STOPPED");
+    Serial.println("   ");
+  }
+
+  int stearMotorLeft(int stearSpeed)
+  {
+    analogWrite(speedPinB, stearSpeed);//Sets speed variable via PWM 
+    digitalWrite(dir1PinB, LOW);
+    digitalWrite(dir2PinB, HIGH);
+    delay(200);
+    analogWrite(speedPinB, 0);//Sets speed variable via PWM
+    digitalWrite(dir1PinB, LOW);
+    digitalWrite(dir2PinB, LOW);  
+    Serial.println("Motor 2 Left"); // Prints out “Motor 1 Forward” on the serial monitor
+    Serial.println("   "); // Creates a blank line printed on the serial monitor
+  }
+
+int stearMotorRight(int stearSpeed)
+  {
+    analogWrite(speedPinB, stearSpeed);//Sets speed variable via PWM 
+    digitalWrite(dir1PinB, HIGH);
+    digitalWrite(dir2PinB, LOW);
+    delay(200);
+    analogWrite(speedPinB, 0);//Sets speed variable via PWM
+    digitalWrite(dir1PinB, LOW);
+    digitalWrite(dir2PinB, LOW);   
+    Serial.println("Motor 2 Right");
+    Serial.println("   ");
+  }
+
+void stearMotorStop()
+  {
+    analogWrite(speedPinB, 0);//Sets speed variable via PWM 
+    digitalWrite(dir1PinB, LOW);
+    digitalWrite(dir2PinB, LOW);
+    Serial.println("Motor 2 STOPPED");
+    Serial.println("   ");
+  }
