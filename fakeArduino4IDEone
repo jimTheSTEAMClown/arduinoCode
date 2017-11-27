@@ -1,0 +1,24 @@
+#include <stdio.h>
+int fakeLoopCount = 0;
+
+int setup(void){
+// your code goes here
+puts("just ran setup");
+}
+
+int loop(void){
+// your code goes here
+puts("just ran loop");
+}
+
+int main(void) {
+	// your code goes here
+	setup();
+    while (fakeLoopCount< 10){
+		fakeLoopCount++;
+		// call to loop
+		loop();
+	}
+	printf("just ran loop %d times", fakeLoopCount);
+	return 0;
+}
