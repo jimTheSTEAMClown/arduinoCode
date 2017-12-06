@@ -51,14 +51,12 @@ void setup() {
 
   delay(100); // delay for some time... maybe 10 seconds
   // run motor to the left till left limit is detected, then stop the motor
-  run2LeftLimit(100);
-  toggle=1;
+  toggle=0;
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if(toggle==1)
-  {
+
       startPulseStatus = digitalRead(startPulse);
       if (startPulseStatus == HIGH)
       {
@@ -67,18 +65,22 @@ void loop() {
         if(toggle==1) 
         {
           driveMotorStop();
-          delay(1000);
+          delay(100);
           driveMotorLeft(100);
-          delay(5000);
+          delay(1000);
           toggle=!toggle;
+          driveMotorStop();
+          delay(100);
         }
         else
         {
           driveMotorStop();
-          delay(1000);
+          delay(100);
           driveMotorRight(100);
-          delay(5000);
+          delay(1000);
           toggle=!toggle;
+          driveMotorStop();
+          delay(100);
         }
       }
       else // startPulseStatus == LOW
@@ -128,4 +130,3 @@ void driveMotorStop()
     Serial.println("Motor 1 STOPPED");
     Serial.println("   ");
   }
-
