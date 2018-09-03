@@ -18,24 +18,22 @@
 //
 // ============================================================================
 
-const int arduinoBoardLED = 13;		// define as constant integer on pin 13 
-
 // ============================================================================
 // The setup routine runs once when you load the sketch or press reset:
 // This is where you define pin directions
 void setup()
 {
 	// initialize the pins used in this sketch
-	pinMode(arduinoBoardLED, OUTPUT);
+	pinMode(13, OUTPUT);
 }
 
 // this "main" loop routine runs over and over again forever:
 void loop()
 {
 	//Set pin 13 to HIGH. This provides 5 volts to the LED and turns it on
-	digitalWrite(arduinoBoardLED, HIGH);
+	digitalWrite(13, HIGH);
 	delay(1000);	//Wait for a second
 	//Set pin 13 LOW and This turns the LED off
-	digitalWrite(arduinoBoardLED, LOW);
+	digitalWrite(13, LOW);
 	delay(1000);	//Wait for a second
 }
