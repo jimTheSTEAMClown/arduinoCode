@@ -2,18 +2,22 @@
 // Source: STEAM Clown - www.steamclown.org 
 // GitHub: https://github.com/jimTheSTEAMClown/arduinoCode
 // Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
-// This example code is licensed under the CC BY-NC-SA 3.0.
+// This example code under the GNU Lesser General Public License v3.0
+// and any docs and lesson examples is licensed under the CC BY-NC-SA 3.0.
 // https://creativecommons.org/licenses/by-nc-sa/3.0/
 // Create Date:			09/14/2017 
-// Design Name:			steamClass_pushButton_LED_1
+// Design Name:			pushButton_LED_1_STEAMClown
 // Description:     adaptation of blink on http://arduino.cc/
 // Dependencies: 
 // Revision: 
+// Revision 0.04 - Updated for SVCTE Mechatronics Class 2018 - 09/06/2018
+// Revision 0.03 - Updated for RubeGoldberg Workshop - 06/18/2018
 // Revision 0.02 - Updated for SVCTE Mechatronics Class
 // Revision 0.01 - Created 09/14/2017
 // Additional Comments: 
 //
 // ============================================================================
+
 const int LED = 10;	// LED on pin 13
 const int pushButton = 3;       // input pin for Push Button sensor
 int buttonState = 0;     // variable to store the read value
