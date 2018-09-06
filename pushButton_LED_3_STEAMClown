@@ -26,32 +26,32 @@ int buttonStatus = LOW;		// variable for reading the status buttonPin on Pin
 // This is where you define pin directions
 void setup()
 {
-	Serial.begin(9600);           // Use Serial Monitor to debug
-	// initialize the digital pin as an output.
-	pinMode(LED, OUTPUT);
-	pinMode(buttonPin, INPUT);	
-	digitalWrite(buttonPin, HIGH);  // set pullup on analog pin 0
+  Serial.begin(9600);           // Use Serial Monitor to debug
+  // initialize the digital pin as an output.
+  pinMode(LED, OUTPUT);
+  pinMode(buttonPin, INPUT);	
+  digitalWrite(buttonPin, HIGH);  // set pullup on analog pin 0
 }
 
 // ============================================================================
 // the loop routine runs over and over again forever:
 void loop()
 {
-	buttonStatus = digitalRead(buttonPin);
-	if (buttonStatus == HIGH)
-	{
-		digitalWrite(LED, HIGH);
-    	Serial.println ("Detected PushButton signal");
-		// This is where you would put code that you wanted to happen when 
-		// buttonStatus is HIGH
-		delay(100);
-	}
-    else // buttonStatus == LOW
-    {	
-    	digitalWrite(LED, LOW);
-    	Serial.println ("Waiting to Detect pushButton signal");
-    	// This is where you would put code that you wanted to happen when 
-		// buttonStatus is lOW
-	   	delay(100);
-	}
+  buttonStatus = digitalRead(buttonPin);
+  if (buttonStatus == HIGH)
+  {
+    digitalWrite(LED, HIGH);
+    Serial.println ("Detected PushButton signal");
+    // This is where you would put code that you wanted to happen when 
+    // buttonStatus is HIGH
+    delay(100);
+  }
+  else // buttonStatus == LOW
+  {	
+    digitalWrite(LED, LOW);
+    Serial.println ("Waiting to Detect pushButton signal");
+    // This is where you would put code that you wanted to happen when 
+    // buttonStatus is lOW
+    delay(100);
+  }
 }
