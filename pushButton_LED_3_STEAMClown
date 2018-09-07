@@ -53,5 +53,5 @@ void loop()
     // This is where you would put code that you wanted to happen when 
     // buttonStatus is lOW
     delay(100);
-  }
+  } 
 }
