@@ -68,7 +68,8 @@ void loop() {
     analogWrite(leftSpeedControlPin, motorSpeed);//Sets speed variable via PWM
     digitalWrite(leftDirControl1, LOW);
     digitalWrite(leftDirControl2, LOW);
-    Serial.println("All Motors STOPPED");  
+    Serial.println("All Motors STOPPED"); 
+    delay(1000); 
     
     // turn on left motor in a CounterClockwise motion
     analogWrite(leftSpeedControlPin, motorSpeed);//Sets speed variable via PWM
@@ -77,4 +78,12 @@ void loop() {
     Serial.print("CounterClockwise with a speed of ");
     Serial.println(motorSpeed);
     delay(2000); 
+    
+    // Stop All Motors
+    motorSpeed = 0;
+    analogWrite(leftSpeedControlPin, motorSpeed);//Sets speed variable via PWM
+    digitalWrite(leftDirControl1, LOW);
+    digitalWrite(leftDirControl2, LOW);
+    Serial.println("All Motors STOPPED"); 
+    delay(1000); 
  }
