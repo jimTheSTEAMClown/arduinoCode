@@ -49,7 +49,8 @@ void setup() {
   analogWrite(rightSpeedControlPin, motorSpeed);//Sets speed variable via PWM  
   digitalWrite(rightDirControl1, LOW); 
   digitalWrite(rightDirControl2, LOW);
-  Serial.println("All Motors STOPPED");    
+  Serial.println("All Motors STOPPED");
+  delay(1000);
 }
    
 void loop() {
