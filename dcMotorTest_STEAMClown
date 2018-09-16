@@ -60,7 +60,7 @@ void loop() {
     digitalWrite(leftDirControl1, LOW);
     digitalWrite(leftDirControl2, HIGH);
     Serial.print("Clockwise with a speed of ");
-    Serial.print(motorSpeed);
+    Serial.println(motorSpeed);
     delay(2000); 
     
     // Stop All Motors
@@ -75,6 +75,6 @@ void loop() {
     digitalWrite(leftDirControl1, HIGH);
     digitalWrite(leftDirControl2, LOW);
     Serial.print("CounterClockwise with a speed of ");
-    Serial.print(motorSpeed);
+    Serial.println(motorSpeed);
     delay(2000); 
  }
