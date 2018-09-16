@@ -53,9 +53,9 @@ void setup() {
 }
    
 void loop() {
-    motorSpeed = 140;         //Sets speed variable via PWM = 140;
-    
+      
     // turn on left motor in a Clockwise motion
+    motorSpeed = 140;         //Sets speed variable via PWM = 140;
     analogWrite(leftSpeedControlPin, motorSpeed);//Sets speed variable via PWM
     digitalWrite(leftDirControl1, LOW);
     digitalWrite(leftDirControl2, HIGH);
@@ -72,6 +72,7 @@ void loop() {
     delay(1000); 
     
     // turn on left motor in a CounterClockwise motion
+    motorSpeed = 140;         //Sets speed variable via PWM = 140;
     analogWrite(leftSpeedControlPin, motorSpeed);//Sets speed variable via PWM
     digitalWrite(leftDirControl1, HIGH);
     digitalWrite(leftDirControl2, LOW);
