@@ -10,7 +10,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly
-  delay(1000); // just a small dealy to slow the main loop down
+  delay(1000); // just a small delay to slow the main loop down
   Serial.println("Starting Main Loop Code");
   // put your code between here
     
