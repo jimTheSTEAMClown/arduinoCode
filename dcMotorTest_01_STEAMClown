@@ -24,10 +24,6 @@
   const int leftDirControl1 = 2;
   const int leftDirControl2 = 3;
   const int leftSpeedControlPin = 4; // Needs to be a PWM pin to be able to control motor speed
-  // Right Motor
-  const int rightDirControl1 = 5;
-  const int rightDirControl2 = 6;
-  const int rightSpeedControlPin = 7; // Needs to be a PWM pin to be able to control motor speed
 
 void setup() {
   // initialize serial communication @ 9600 baud:
@@ -37,19 +33,12 @@ void setup() {
   pinMode(leftDirControl1,OUTPUT);
   pinMode(leftDirControl2,OUTPUT);
   pinMode(leftSpeedControlPin,OUTPUT);
-  pinMode(rightDirControl1,OUTPUT);
-  pinMode(rightDirControl2,OUTPUT);
-  pinMode(rightSpeedControlPin,OUTPUT);
 
   // Stop All Motors
   motorSpeed = 0;
   analogWrite(leftSpeedControlPin, motorSpeed);//Sets speed variable via PWM
   digitalWrite(leftDirControl1, LOW);
   digitalWrite(leftDirControl2, LOW);
-  analogWrite(rightSpeedControlPin, motorSpeed);//Sets speed variable via PWM  
-  digitalWrite(rightDirControl1, LOW); 
-  digitalWrite(rightDirControl2, LOW);
-  Serial.println("All Motors STOPPED");
   delay(1000);
 }
    
