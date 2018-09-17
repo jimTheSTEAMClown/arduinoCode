@@ -25,10 +25,6 @@
   const int leftDirControl1 = 2;
   const int leftDirControl2 = 3;
   const int leftSpeedControlPin = 4; // Needs to be a PWM pin to be able to control motor speed
-  // Right Motor
-  const int rightDirControl1 = 5;
-  const int rightDirControl2 = 6;
-  const int rightSpeedControlPin = 7; // Needs to be a PWM pin to be able to control motor speed
 
 void setup() {
   // initialize serial communication @ 9600 baud:
