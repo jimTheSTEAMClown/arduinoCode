@@ -1,0 +1,20 @@
+int input = A0;
+int led = LED_BUILTIN;
+
+void setup() {
+  pinMode(input, INPUT);
+  Serial.begin(9600);           // Use Serial Monitor to debug
+}
+
+void loop() {
+  int pinValue = analogRead(input);
+  
+  if(pinValue > 0) {
+    Serial.println(pinValue);
+    digitalWrite(led, HIGH);
+  }
+  else {
+    digitalWrite(led, LOW);
+  }
+  Serial.println(pinValue);
+}
