@@ -89,12 +89,12 @@ int read_LCD_buttons()
 */
 
 // For 5 button use this threshold
- if (adc_key_in < 500)   return btnNONE;  
- if (adc_key_in < 690)   return btnSELECT;  
- if (adc_key_in < 740)  return btnLEFT; 
- if (adc_key_in < 800)  return btnRIGHT; 
- if (adc_key_in < 860)  return btnUP; 
- if (adc_key_in < 940)  return btnDOWN;  
+ if (adc_key_in < 50)   return btnNONE;  
+ if (adc_key_in < 69)   return btnSELECT;  
+ if (adc_key_in < 74)  return btnLEFT; 
+ if (adc_key_in < 80)  return btnRIGHT; 
+ if (adc_key_in < 86)  return btnUP; 
+ if (adc_key_in < 94)  return btnDOWN;  
 
  return btnNONE;  // when all others fail, return this...
 }
