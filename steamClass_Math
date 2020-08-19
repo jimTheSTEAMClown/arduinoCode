@@ -45,6 +45,6 @@ void loop()
 // Add some math functions here....
 // c = a + b;    // if you uncomment this next line, why does it give an error? 
 // Hint: global variables need to be decalred before. setup().   when they are 
-// declared in setuo() they only are valid inside setup()
+// declared in setup() they only are valid inside setup()
 
 }
